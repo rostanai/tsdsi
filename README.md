@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TSDSI - Telecommunications Standards Development Society, India
+
+A modern, professional business website for TSDSI built with Next.js 15, shadcn/UI, and Tailwind CSS.
+
+## Features
+
+- 🎨 Modern, responsive design with dark/light theme support
+- ⚡ Built with Next.js 15 App Router and TypeScript
+- 🎭 Beautiful UI components from shadcn/UI
+- 🎯 SEO optimized with comprehensive metadata
+- 📱 Fully responsive across all devices
+- ♿ Accessible with ARIA labels and keyboard navigation
+- 🚀 Optimized for Vercel deployment
+
+## Pages
+
+- **Home**: Hero section, statistics, features, initiatives, and partners
+- **About**: Mission, vision, objectives, history, and governance
+- **Standards**: 5G/6G initiatives, working groups, published standards
+- **Membership**: Benefits, membership tiers, and application process
+- **Collaborations**: International and national partnerships
+- **News & Events**: Latest updates and upcoming events
+- **Contact**: Contact form with validation and FAQ
+
+## Tech Stack
+
+- **Framework**: Next.js 15.1.1
+- **UI Library**: shadcn/UI
+- **Styling**: Tailwind CSS 4
+- **Language**: TypeScript
+- **Form Handling**: React Hook Form + Zod
+- **Icons**: Lucide React
+- **Theme**: next-themes
+- **Animations**: Framer Motion
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ or Bun
+- pnpm (recommended) or npm
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Install dependencies
+pnpm install
+
+# Run development server
 pnpm dev
-# or
-bun dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Vercel (Recommended)
 
-## Learn More
+1. Push your code to GitHub
+2. Import the repository in Vercel
+3. Vercel will automatically detect Next.js and deploy
 
-To learn more about Next.js, take a look at the following resources:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/tsdsi)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Manual Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm build
+pnpm start
+```
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+tsdsi/
+├── app/                    # Next.js app directory
+│   ├── about/             # About page
+│   ├── collaborations/    # Collaborations page
+│   ├── contact/           # Contact page
+│   ├── membership/        # Membership page
+│   ├── news/              # News & Events page
+│   ├── standards/         # Standards page
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Homepage
+├── components/            # React components
+│   ├── layout/           # Layout components (Header, Footer)
+│   ├── ui/               # shadcn/UI components
+│   └── theme-provider.tsx
+├── lib/                   # Utility functions
+│   └── utils.ts
+└── public/               # Static assets
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Customization
+
+### Colors
+
+Edit the CSS variables in `app/globals.css` to customize the color scheme:
+
+```css
+:root {
+  --primary: 197 71% 52%;    /* Blue */
+  --secondary: 210 40% 96.1%;
+  /* ... */
+}
+```
+
+### Content
+
+Update page content in the respective files under `app/` directory.
+
+### Components
+
+Add or modify shadcn/UI components:
+
+```bash
+pnpm dlx shadcn@latest add [component-name]
+```
+
+## License
+
+© 2026 TSDSI. All rights reserved.
+
+## Support
+
+For questions or support, please contact:
+- Email: info@tsdsi.in
+- Website: https://tsdsi.in
