@@ -64,11 +64,18 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-teal-500/10 py-20 sm:py-32">
-        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20 sm:py-32">
+        <div className="absolute inset-0 opacity-20">
+          <img
+            src="/tsdsi_hero_network_1768295750786.png"
+            alt="5G/6G Network"
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
         <div className="container relative mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <Badge className="mb-4 animate-fade-in" variant="secondary">
+            <Badge className="mb-4 animate-fade-in bg-gradient-to-r from-primary to-secondary text-white border-0" variant="secondary">
               India's Premier Telecom Standards Organization
             </Badge>
             <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl animate-slide-in-right">
@@ -82,13 +89,13 @@ export default function Home() {
               to global standardization efforts including 5G, 6G, and beyond.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center animate-fade-in">
-              <Button size="lg" asChild className="group">
+              <Button size="lg" asChild className="group bg-gradient-to-r from-primary to-secondary hover:opacity-90">
                 <Link href="/about">
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" asChild className="border-2 border-primary hover:bg-primary/10">
                 <Link href="/membership">Become a Member</Link>
               </Button>
             </div>
@@ -132,22 +139,34 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => {
               const Icon = feature.icon
+              const gradients = [
+                "from-blue-500/10 to-blue-600/5",
+                "from-purple-500/10 to-purple-600/5",
+                "from-orange-500/10 to-orange-600/5",
+                "from-cyan-500/10 to-cyan-600/5",
+              ]
+              const iconBgs = [
+                "bg-gradient-to-br from-blue-500 to-blue-600",
+                "bg-gradient-to-br from-purple-500 to-purple-600",
+                "bg-gradient-to-br from-orange-500 to-orange-600",
+                "bg-gradient-to-br from-cyan-500 to-cyan-600",
+              ]
               return (
                 <Card
                   key={feature.title}
-                  className="group transition-all hover:shadow-lg animate-fade-in"
+                  className={`group transition-all hover:shadow-xl hover:scale-105 border-2 bg-gradient-to-br ${gradients[index]} animate-fade-in`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <CardHeader>
-                    <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
-                      <Icon className={`h-6 w-6 ${feature.color}`} />
+                    <div className={`mb-4 inline-flex rounded-xl ${iconBgs[index]} p-4 shadow-lg`}>
+                      <Icon className="h-8 w-8 text-white" />
                     </div>
-                    <CardTitle className="group-hover:text-primary transition-colors">
+                    <CardTitle className="text-xl group-hover:text-primary transition-colors">
                       {feature.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription>{feature.description}</CardDescription>
+                    <CardDescription className="text-base leading-relaxed">{feature.description}</CardDescription>
                   </CardContent>
                 </Card>
               )
@@ -166,23 +185,42 @@ export default function Home() {
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
-            {initiatives.map((initiative, index) => (
-              <Card
-                key={initiative.title}
-                className="transition-all hover:shadow-lg animate-slide-in-right"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <CardHeader>
-                  <Badge className="mb-2 w-fit" variant="secondary">
-                    {initiative.badge}
-                  </Badge>
-                  <CardTitle>{initiative.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{initiative.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+            {initiatives.map((initiative, index) => {
+              const images = [
+                "/5g_technology_1768295801623.png",
+                "/6g_future_1768295821851.png",
+                "/standards_development_1768295769829.png",
+              ]
+              const gradients = [
+                "from-blue-500/20 to-purple-500/10",
+                "from-purple-500/20 to-orange-500/10",
+                "from-orange-500/20 to-pink-500/10",
+              ]
+              return (
+                <Card
+                  key={initiative.title}
+                  className={`overflow-hidden transition-all hover:shadow-2xl hover:scale-105 border-2 bg-gradient-to-br ${gradients[index]} animate-slide-in-right`}
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <div className="aspect-video w-full overflow-hidden">
+                    <img
+                      src={images[index]}
+                      alt={initiative.title}
+                      className="h-full w-full object-cover transition-transform group-hover:scale-110"
+                    />
+                  </div>
+                  <CardHeader>
+                    <Badge className="mb-2 w-fit bg-gradient-to-r from-primary to-secondary text-white border-0" variant="secondary">
+                      {initiative.badge}
+                    </Badge>
+                    <CardTitle className="text-xl">{initiative.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base">{initiative.description}</CardDescription>
+                  </CardContent>
+                </Card>
+              )
+            })}
           </div>
         </div>
       </section>

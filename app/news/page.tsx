@@ -89,30 +89,44 @@ export default function NewsPage() {
                         </p>
                     </div>
                     <div className="grid gap-8 lg:grid-cols-2">
-                        {newsItems.map((item, index) => (
-                            <Card key={index} className="group overflow-hidden hover:shadow-lg transition-all">
-                                <div className="aspect-video w-full bg-muted" />
-                                <CardHeader>
-                                    <div className="mb-2 flex items-center gap-2 text-sm text-muted-foreground">
-                                        <Calendar className="h-4 w-4" />
-                                        <span>{item.date}</span>
-                                        <Badge variant="secondary" className="ml-auto">
-                                            {item.category}
-                                        </Badge>
+                        {newsItems.map((item, index) => {
+                            const images = [
+                                "/news_6g_contribution_1768295964652.png",
+                                "/news_working_group_1768295986149.png",
+                                "/news_5gi_deployment_1768296002576.png",
+                                "/news_3gpp_meeting_1768296028720.png",
+                            ]
+                            return (
+                                <Card key={index} className="group overflow-hidden hover:shadow-2xl transition-all border-2">
+                                    <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20">
+                                        <img
+                                            src={images[index]}
+                                            alt={item.title}
+                                            className="h-full w-full object-cover transition-transform group-hover:scale-110"
+                                        />
                                     </div>
-                                    <CardTitle className="group-hover:text-primary transition-colors">
-                                        {item.title}
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <CardDescription className="mb-4">{item.excerpt}</CardDescription>
-                                    <Button variant="link" className="p-0">
-                                        Read more
-                                        <ArrowRight className="ml-2 h-4 w-4" />
-                                    </Button>
-                                </CardContent>
-                            </Card>
-                        ))}
+                                    <CardHeader>
+                                        <div className="mb-2 flex items-center gap-2 text-sm text-muted-foreground">
+                                            <Calendar className="h-4 w-4" />
+                                            <span>{item.date}</span>
+                                            <Badge variant="secondary" className="ml-auto bg-gradient-to-r from-primary to-secondary text-white border-0">
+                                                {item.category}
+                                            </Badge>
+                                        </div>
+                                        <CardTitle className="group-hover:text-primary transition-colors text-xl">
+                                            {item.title}
+                                        </CardTitle>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <CardDescription className="mb-4 text-base">{item.excerpt}</CardDescription>
+                                        <Button variant="link" className="p-0 text-primary">
+                                            Read more
+                                            <ArrowRight className="ml-2 h-4 w-4" />
+                                        </Button>
+                                    </CardContent>
+                                </Card>
+                            )
+                        })}
                     </div>
                 </div>
             </section>
