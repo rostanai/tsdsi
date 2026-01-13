@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80">
+  <!-- Background -->
+  <rect width="400" height="80" fill="white"/>
+  
+  <!-- Blue accent bar -->
+  <rect x="0" y="0" width="8" height="80" fill="#2563eb"/>
+  
+  <!-- TSDSI Text -->
+  <text x="25" y="35" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1e293b">
+    TSDSI
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="25" y="58" font-family="Arial, sans-serif" font-size="11" fill="#64748b">
+    Telecommunications Standards Development Society, India
+  </text>
+</svg>
