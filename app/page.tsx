@@ -75,7 +75,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section with Parallax */}
-      <section className="relative overflow-hidden bg-white py-20 sm:py-32 min-h-[90vh] flex items-center z-0">
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 py-20 sm:py-32 min-h-[90vh] flex items-center z-0">
         {/* Light Background Image */}
         <div
           className="absolute inset-0 opacity-20 z-0 grayscale"
@@ -104,7 +104,7 @@ export default function Home() {
               India's Premier Telecom Standards Organization
             </Badge>
             <h1
-              className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-slate-900"
+              className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-white drop-shadow-lg"
               style={{
                 animation: "slide-in-right 0.8s ease-out",
                 opacity: scrollY > 100 ? 0.5 : 1,
@@ -112,12 +112,12 @@ export default function Home() {
               }}
             >
               Shaping the Future of{" "}
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
+              <span className="bg-gradient-to-r from-yellow-300 via-orange-300 to-pink-300 bg-clip-text text-transparent animate-gradient">
                 Telecommunications
               </span>
             </h1>
             <p
-              className="mb-8 text-lg sm:text-xl text-slate-700"
+              className="mb-8 text-lg sm:text-xl text-white/90 drop-shadow-md"
               style={{
                 animation: "slide-in-left 0.8s ease-out 0.2s both",
                 transform: `translateY(${scrollY * 0.05}px)`
