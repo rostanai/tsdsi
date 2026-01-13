@@ -42,15 +42,11 @@ export function Footer() {
                     {/* Brand Section */}
                     <div className="lg:col-span-2">
                         <Link href="/" className="flex items-center space-x-3 mb-4">
-                            <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-[hsl(217,91%,60%)] via-[hsl(270,95%,75%)] to-[hsl(24,95%,53%)] flex items-center justify-center">
-                                <span className="text-white font-bold text-2xl">T</span>
-                            </div>
-                            <div className="flex flex-col">
-                                <span className="font-bold text-xl">TSDSI</span>
-                                <span className="text-sm text-muted-foreground">
-                                    Telecommunications Standards Development Society, India
-                                </span>
-                            </div>
+                            <img
+                                src="/tsdsi-logo.png"
+                                alt="TSDSI Logo"
+                                className="h-16 w-auto"
+                            />
                         </Link>
                         <p className="text-sm text-muted-foreground mb-6 max-w-md">
                             India's premier organization for developing telecommunications and ICT standards,

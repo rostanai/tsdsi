@@ -1095,7 +1095,7 @@ var localize = {"ajaxurl":"https://tsdsi.in/wp-admin/admin-ajax.php","nonce":"29
 <script type="text/javascript" id="jetpack-stats-js-before">
 /* <![CDATA[ */
 _stq = window._stq || [];
-_stq.push([ "view", {"v":"ext","blog":"133552422","post":"0","tz":"5.5","srv":"tsdsi.in","arch_err":"/wp-content/uploads/2020/02/cropped-TSDSI-Logo-32x32.png","hp":"atomic","ac":"2","amp":"0","j":"1:15.5-a.1"} ]);
+_stq.push([ "view", {"v":"ext","blog":"133552422","post":"0","tz":"5.5","srv":"tsdsi.in","arch_err":"/wp-content/uploads/2020/02/TSDSI-Logo.png","hp":"atomic","ac":"2","amp":"0","j":"1:15.5-a.1"} ]);
 _stq.push([ "clickTrackerInit", "133552422", "0" ]);
 //# sourceURL=jetpack-stats-js-before
 /* ]]> */

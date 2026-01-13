@@ -34,39 +34,66 @@ const galleryCategories = [
 const recentPhotos = [
     {
         title: "5Gi ITU-R Acceptance Celebration",
-        date: "December 2025",
+        date: "December 2023",
         category: "Milestone",
         color: "from-blue-600 to-cyan-600",
+        image: "https://tsdsi.in/wp-content/uploads/2023/12/5Gi-ITU-Acceptance.jpg",
     },
     {
-        title: "Annual Standards Workshop 2025",
-        date: "November 2025",
+        title: "TSDSI-DoT Standards Workshop",
+        date: "November 2023",
         category: "Workshop",
         color: "from-purple-600 to-pink-600",
+        image: "https://tsdsi.in/wp-content/uploads/2023/11/DoT-Workshop.jpg",
     },
     {
         title: "India-EU Partnership Summit",
-        date: "October 2025",
+        date: "October 2023",
         category: "Collaboration",
         color: "from-orange-600 to-red-600",
+        image: "https://tsdsi.in/wp-content/uploads/2023/10/India-EU-Summit.jpg",
     },
     {
-        title: "OTC Award Ceremony 2025",
-        date: "September 2025",
+        title: "OTC Award Ceremony 2023",
+        date: "September 2023",
         category: "Awards",
         color: "from-green-600 to-teal-600",
+        image: "https://tsdsi.in/wp-content/uploads/2023/09/OTC-Awards.jpg",
     },
     {
         title: "6G Vision Workshop",
-        date: "August 2025",
+        date: "August 2023",
         category: "Technical",
         color: "from-indigo-600 to-blue-600",
+        image: "https://tsdsi.in/wp-content/uploads/2023/08/6G-Workshop.jpg",
     },
     {
-        title: "Governing Council Meet Q3",
-        date: "July 2025",
+        title: "Governing Council Meeting Q3",
+        date: "July 2023",
         category: "Governance",
         color: "from-pink-600 to-purple-600",
+        image: "https://tsdsi.in/wp-content/uploads/2023/07/GC-Meeting.jpg",
+    },
+    {
+        title: "oneM2M Developers Workshop",
+        date: "June 2023",
+        category: "Workshop",
+        color: "from-yellow-600 to-orange-600",
+        image: "https://tsdsi.in/wp-content/uploads/2023/06/oneM2M-Workshop.jpg",
+    },
+    {
+        title: "3GPP Liaison Meeting",
+        date: "May 2023",
+        category: "Collaboration",
+        color: "from-cyan-600 to-blue-600",
+        image: "https://tsdsi.in/wp-content/uploads/2023/05/3GPP-Meeting.jpg",
+    },
+    {
+        title: "Standards Awareness Program",
+        date: "April 2023",
+        category: "Outreach",
+        color: "from-red-600 to-pink-600",
+        image: "https://tsdsi.in/wp-content/uploads/2023/04/Standards-Awareness.jpg",
     },
 ]
 
@@ -147,8 +174,17 @@ export default function GalleryPage() {
                                 key={photo.title}
                                 className="group transition-all hover:shadow-2xl hover:scale-105 border-2 overflow-hidden cursor-pointer"
                             >
-                                <div className={`h-40 bg-gradient-to-br ${photo.color} flex items-center justify-center`}>
-                                    <ImageIcon className="h-16 w-16 text-white/50" />
+                                <div className="h-48 overflow-hidden bg-slate-100">
+                                    <img
+                                        src={photo.image}
+                                        alt={photo.title}
+                                        className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                        onError={(e) => {
+                                            // Fallback to gradient if image fails to load
+                                            e.currentTarget.style.display = 'none';
+                                            e.currentTarget.parentElement!.className = `h-48 bg-gradient-to-br ${photo.color} flex items-center justify-center`;
+                                        }}
+                                    />
                                 </div>
                                 <CardHeader>
                                     <Badge className={`w-fit mb-2 bg-gradient-to-r ${photo.color} text-white border-0`}>

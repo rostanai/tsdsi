@@ -78,15 +78,11 @@ export function Header() {
             <nav className="container mx-auto flex items-center justify-between p-4 lg:px-8">
                 {/* Logo */}
                 <Link href="/" className="flex items-center space-x-3 group">
-                    <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-[hsl(217,91%,60%)] via-[hsl(270,95%,75%)] to-[hsl(24,95%,53%)] flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all group-hover:scale-110">
-                        <span className="text-white font-bold text-xl">T</span>
-                    </div>
-                    <div className="flex flex-col">
-                        <span className="font-bold text-lg leading-tight">TSDSI</span>
-                        <span className="text-xs text-muted-foreground hidden sm:block">
-                            Standards Development Society
-                        </span>
-                    </div>
+                    <img
+                        src="/tsdsi-logo.png"
+                        alt="TSDSI Logo"
+                        className="h-12 w-auto transition-transform group-hover:scale-105"
+                    />
                 </Link>
 
                 {/* Desktop Mega Menu */}
