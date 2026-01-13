@@ -43,7 +43,7 @@ export function Footer() {
                     <div className="lg:col-span-2">
                         <Link href="/" className="flex items-center space-x-3 mb-4">
                             <img
-                                src="/tsdsi-logo.png"
+                                src="/tsdsi-logo.svg"
                                 alt="TSDSI Logo"
                                 className="h-16 w-auto"
                             />

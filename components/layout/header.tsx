@@ -79,7 +79,7 @@ export function Header() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center space-x-3 group">
                     <img
-                        src="/tsdsi-logo.png"
+                        src="/tsdsi-logo.svg"
                         alt="TSDSI Logo"
                         className="h-12 w-auto transition-transform group-hover:scale-105"
                     />
