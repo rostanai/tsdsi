@@ -71,8 +71,8 @@ export function Header() {
             className={cn(
                 "sticky top-0 z-50 w-full transition-all duration-300",
                 isScrolled
-                    ? "bg-background/95 backdrop-blur-lg border-b shadow-lg"
-                    : "bg-transparent"
+                    ? "bg-white/90 backdrop-blur-xl border-b shadow-lg"
+                    : "bg-white/70 backdrop-blur-md border-b border-white/20"
             )}
         >
             <nav className="container mx-auto flex items-center justify-between p-4 lg:px-8">
@@ -171,27 +171,33 @@ export function Header() {
                                 <span className="sr-only">Open menu</span>
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                        <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white overflow-y-auto">
                             <nav className="flex flex-col gap-6 mt-8">
                                 {Object.entries(megaMenuItems).map(([menuName, menuData]) => (
-                                    <div key={menuName}>
-                                        <h3 className="font-bold text-sm text-primary mb-2 px-4">{menuName}</h3>
+                                    <div key={menuName} className="border-b pb-4">
+                                        <div className={`bg-gradient-to-r ${menuData.color} text-white font-bold text-sm mb-3 px-4 py-2 rounded-lg`}>
+                                            {menuName}
+                                        </div>
                                         <div className="space-y-1">
-                                            {menuData.items.map((item) => (
-                                                <Link
-                                                    key={item.href}
-                                                    href={item.href}
-                                                    onClick={() => setMobileMenuOpen(false)}
-                                                    className={cn(
-                                                        "block text-sm font-medium transition-colors hover:text-primary px-4 py-2 rounded-md",
-                                                        pathname === item.href
-                                                            ? "text-primary bg-primary/10"
-                                                            : "text-muted-foreground"
-                                                    )}
-                                                >
-                                                    {item.name}
-                                                </Link>
-                                            ))}
+                                            {menuData.items.map((item) => {
+                                                const Icon = item.icon
+                                                return (
+                                                    <Link
+                                                        key={item.href}
+                                                        href={item.href}
+                                                        onClick={() => setMobileMenuOpen(false)}
+                                                        className={cn(
+                                                            "flex items-center gap-3 text-sm font-medium transition-colors hover:bg-primary/10 px-4 py-3 rounded-md",
+                                                            pathname === item.href
+                                                                ? "text-primary bg-primary/10"
+                                                                : "text-slate-700"
+                                                        )}
+                                                    >
+                                                        <Icon className={`h-4 w-4 ${item.iconColor}`} />
+                                                        <span>{item.name}</span>
+                                                    </Link>
+                                                )
+                                            })}
                                         </div>
                                     </div>
                                 ))}
