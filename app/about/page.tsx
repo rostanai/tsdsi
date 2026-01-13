@@ -1,7 +1,12 @@
-import { Target, Eye, Award, Users, Calendar, CheckCircle2 } from "lucide-react"
+"use client"
+
+import { Target, Eye, Award, Users, Calendar, CheckCircle2, Sparkles, Trophy, Globe2 } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
 const objectives = [
     "Develop and promote India-specific requirements for telecommunications and ICT",
@@ -12,6 +17,37 @@ const objectives = [
     "Support rural connectivity and affordable broadband access",
     "Encourage domestic research and development and innovation in telecommunications and ICT",
     "Ensure the security and safety of networks and equipment",
+]
+
+const achievements = [
+    {
+        title: "100+ Members",
+        description: "Leading telecom operators, manufacturers, and technology companies",
+        icon: Users,
+        color: "from-blue-500 to-blue-600",
+        stat: "100+",
+    },
+    {
+        title: "50+ Standards",
+        description: "Published standards and technical reports",
+        icon: Award,
+        color: "from-purple-500 to-purple-600",
+        stat: "50+",
+    },
+    {
+        title: "Global Partnerships",
+        description: "Collaborations with 3GPP, ITU, ETSI, oneM2M",
+        icon: Globe2,
+        color: "from-orange-500 to-orange-600",
+        stat: "15+",
+    },
+    {
+        title: "10 Years",
+        description: "Of excellence in telecommunications standardization",
+        icon: Trophy,
+        color: "from-cyan-500 to-cyan-600",
+        stat: "10+",
+    },
 ]
 
 const milestones = [
@@ -43,31 +79,118 @@ const milestones = [
 ]
 
 export default function AboutPage() {
+    const [scrollY, setScrollY] = useState(0)
+
+    useEffect(() => {
+        const handleScroll = () => setScrollY(window.scrollY)
+        window.addEventListener("scroll", handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
+
     return (
         <div className="flex flex-col">
-            {/* Hero Section */}
-            <section className="bg-gradient-to-br from-primary/10 via-background to-teal-500/10 py-20">
-                <div className="container mx-auto px-4 lg:px-8">
+            {/* Hero Section with Header Image */}
+            <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20 min-h-[70vh] flex items-center">
+                {/* Animated Background */}
+                <div
+                    className="absolute inset-0 opacity-30"
+                    style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+                >
+                    <img
+                        src="/about_tsdsi_header_1768297491640.png"
+                        alt="TSDSI Team"
+                        className="h-full w-full object-cover"
+                    />
+                </div>
+
+                {/* Floating Gradient Orbs */}
+                <div className="absolute inset-0 overflow-hidden">
+                    <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse" />
+                </div>
+
+                <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
+
+                <div className="container relative mx-auto px-4 lg:px-8">
                     <div className="mx-auto max-w-4xl text-center">
-                        <Badge className="mb-4" variant="secondary">
+                        <Badge className="mb-4 bg-gradient-to-r from-primary to-secondary text-white border-0 shadow-lg animate-fade-in">
                             About TSDSI
                         </Badge>
-                        <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+                        <h1
+                            className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
+                            style={{ animation: "slide-in-right 0.8s ease-out" }}
+                        >
                             India's Premier{" "}
-                            <span className="bg-gradient-to-r from-[hsl(217,91%,60%)] via-[hsl(270,95%,75%)] to-[hsl(24,95%,53%)] bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-[hsl(217,91%,60%)] via-[hsl(270,95%,75%)] to-[hsl(24,95%,53%)] bg-clip-text text-transparent animate-gradient">
                                 Standards Organization
                             </span>
                         </h1>
-                        <p className="text-lg text-muted-foreground sm:text-xl">
+                        <p
+                            className="mb-8 text-lg text-muted-foreground sm:text-xl"
+                            style={{ animation: "slide-in-left 0.8s ease-out 0.2s both" }}
+                        >
                             Established in 2014, TSDSI is an autonomous, membership-based organization dedicated
                             to developing standards for Telecom/ICT products and services within India.
                         </p>
+                        <div
+                            className="flex flex-col gap-4 sm:flex-row sm:justify-center"
+                            style={{ animation: "fade-in 0.8s ease-out 0.4s both" }}
+                        >
+                            <Button size="lg" asChild className="group bg-gradient-to-r from-primary to-secondary hover:opacity-90 hover:scale-105 transition-all shadow-lg hover:shadow-xl">
+                                <Link href="/governance">
+                                    <Sparkles className="mr-2 h-5 w-5" />
+                                    Our Governance
+                                </Link>
+                            </Button>
+                            <Button size="lg" variant="outline" asChild className="border-2 border-primary hover:bg-primary/10 hover:scale-105 transition-all">
+                                <Link href="/partners">View Our Partners</Link>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Achievements Section */}
+            <section className="py-20">
+                <div className="container mx-auto px-4 lg:px-8">
+                    <div className="mb-12 text-center">
+                        <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Our Achievements</h2>
+                        <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+                            A decade of impact in telecommunications standardization
+                        </p>
+                    </div>
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                        {achievements.map((achievement, index) => {
+                            const Icon = achievement.icon
+                            return (
+                                <Card
+                                    key={achievement.title}
+                                    className="group transition-all hover:shadow-2xl hover:scale-105 border-2 bg-gradient-to-br from-background to-muted/30 overflow-hidden"
+                                    style={{ animationDelay: `${index * 100}ms` }}
+                                >
+                                    <div className={`h-2 w-full bg-gradient-to-r ${achievement.color}`} />
+                                    <CardHeader>
+                                        <div className={`mb-4 inline-flex rounded-xl bg-gradient-to-br ${achievement.color} p-4 shadow-lg`}>
+                                            <Icon className="h-8 w-8 text-white" />
+                                        </div>
+                                        <div className="mb-2">
+                                            <span className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                                {achievement.stat}
+                                            </span>
+                                        </div>
+                                        <CardTitle className="text-xl">{achievement.title}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <CardDescription className="text-base">{achievement.description}</CardDescription>
+                                    </CardContent>
+                                </Card>
+                            )
+                        })}
                     </div>
                 </div>
             </section>
 
             {/* Mission & Vision */}
-            <section className="py-20">
+            <section className="bg-muted/50 py-20">
                 <div className="container mx-auto px-4 lg:px-8">
                     <div className="grid gap-8 lg:grid-cols-2">
                         <Card className="border-2 border-primary/20">
