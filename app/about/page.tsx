@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
+// SEO Metadata would be in a separate metadata.ts file for this page
+
 const objectives = [
     "Develop and promote India-specific requirements for telecommunications and ICT",
     "Take Indian requirements and solutions to global standards organizations",
