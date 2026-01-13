@@ -273,34 +273,44 @@ export default function AboutPage() {
 
                             {/* Milestones */}
                             <div className="space-y-12">
-                                {milestones.map((milestone, index) => (
-                                    <div
-                                        key={milestone.year}
-                                        className={`relative flex items-center gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                                            }`}
-                                    >
-                                        {/* Year badge */}
-                                        <div className="absolute left-8 flex h-16 w-16 items-center justify-center rounded-full border-4 border-background bg-primary text-primary-foreground md:left-1/2 md:-translate-x-1/2">
-                                            <Calendar className="h-6 w-6" />
-                                        </div>
+                                {milestones.map((milestone, index) => {
+                                    const colors = [
+                                        "from-blue-600 to-cyan-600",
+                                        "from-purple-600 to-pink-600",
+                                        "from-orange-600 to-red-600",
+                                        "from-green-600 to-teal-600",
+                                        "from-indigo-600 to-blue-600",
+                                    ]
+                                    return (
+                                        <div
+                                            key={milestone.year}
+                                            className={`relative flex items-center gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                                                }`}
+                                        >
+                                            {/* Year badge */}
+                                            <div className={`absolute left-8 flex h-16 w-16 items-center justify-center rounded-full border-4 border-background bg-gradient-to-br ${colors[index]} shadow-lg md:left-1/2 md:-translate-x-1/2`}>
+                                                <Calendar className="h-6 w-6 text-white" />
+                                            </div>
 
-                                        {/* Content */}
-                                        <div className="ml-24 md:ml-0 md:w-1/2">
-                                            <Card
-                                                className={`transition-all hover:shadow-lg ${index % 2 === 0 ? "md:mr-12" : "md:ml-12"
-                                                    }`}
-                                            >
-                                                <CardHeader>
-                                                    <Badge className="mb-2 w-fit">{milestone.year}</Badge>
-                                                    <CardTitle>{milestone.title}</CardTitle>
-                                                </CardHeader>
-                                                <CardContent>
-                                                    <CardDescription>{milestone.description}</CardDescription>
-                                                </CardContent>
-                                            </Card>
+                                            {/* Content */}
+                                            <div className="ml-24 md:ml-0 md:w-1/2">
+                                                <Card
+                                                    className={`transition-all hover:shadow-2xl hover:scale-105 border-2 overflow-hidden ${index % 2 === 0 ? "md:mr-12" : "md:ml-12"
+                                                        }`}
+                                                >
+                                                    <div className={`h-2 w-full bg-gradient-to-r ${colors[index]}`} />
+                                                    <CardHeader>
+                                                        <Badge className={`mb-2 w-fit bg-gradient-to-r ${colors[index]} text-white border-0`}>{milestone.year}</Badge>
+                                                        <CardTitle className="text-xl">{milestone.title}</CardTitle>
+                                                    </CardHeader>
+                                                    <CardContent>
+                                                        <CardDescription className="text-base">{milestone.description}</CardDescription>
+                                                    </CardContent>
+                                                </Card>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    )
+                                })}
                             </div>
                         </div>
                     </div>
