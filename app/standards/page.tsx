@@ -240,7 +240,7 @@ export default function StandardsPage() {
             </section>
 
             {/* Standards Process */}
-            <section className="bg-muted/50 py-20">
+            <section className="bg-gradient-to-br from-green-50 via-teal-50 to-cyan-50 py-20">
                 <div className="container mx-auto px-4 lg:px-8">
                     <div className="mb-12 text-center">
                         <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Standards Development Process</h2>

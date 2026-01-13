@@ -150,7 +150,7 @@ export default function AboutPage() {
             </section>
 
             {/* Achievements Section */}
-            <section className="py-20">
+            <section className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
                 <div className="container mx-auto px-4 lg:px-8">
                     <div className="mb-12 text-center">
                         <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Our Achievements</h2>

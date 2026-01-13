@@ -106,7 +106,7 @@ export default function GovernancePage() {
             </section>
 
             {/* Governance Areas */}
-            <section className="bg-muted/50 py-20">
+            <section className="bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 py-20">
                 <div className="container mx-auto px-4 lg:px-8">
                     <div className="mb-12 text-center">
                         <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Governance Bodies</h2>

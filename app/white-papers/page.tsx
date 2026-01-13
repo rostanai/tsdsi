@@ -120,7 +120,7 @@ export default function WhitePapersPage() {
             </section>
 
             {/* White Papers Grid */}
-            <section className="bg-muted/50 py-20">
+            <section className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-20">
                 <div className="container mx-auto px-4 lg:px-8">
                     <div className="mb-12 text-center">
                         <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Published White Papers</h2>
