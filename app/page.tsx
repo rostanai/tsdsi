@@ -74,28 +74,26 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section with Parallax */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 py-20 sm:py-32 min-h-[90vh] flex items-center z-0">
-        {/* Light Background Image */}
-        <div
-          className="absolute inset-0 opacity-20 z-0 grayscale"
-          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
-        >
-          <img
-            src="/tsdsi_hero_network_1768295750786.png"
-            alt="5G/6G Network"
-            className="h-full w-full object-cover"
-          />
+      {/* Hero Section with Enhanced Visuals */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 py-20 sm:py-32 min-h-[90vh] flex items-center z-0">
+        {/* Animated Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255,255,255,0.2) 1px, transparent 1px),
+                             radial-gradient(circle at 75% 75%, rgba(255,255,255,0.2) 1px, transparent 1px)`,
+            backgroundSize: '50px 50px'
+          }} />
         </div>
 
-        {/* Floating Gradient Orbs - Lighter */}
+        {/* Floating Gradient Orbs - More Vibrant */}
         <div className="absolute inset-0 overflow-hidden z-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-orange-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse delay-1000" />
-          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400/15 to-blue-400/15 rounded-full blur-3xl animate-pulse delay-500" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-pink-500/30 to-purple-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }} />
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-blue-50/60 to-white/70 z-0" />
+        {/* Gradient Overlay for Depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-blue-900/40 z-0" />
 
         <div className="container relative mx-auto px-4 lg:px-8 z-10">
           <div className="mx-auto max-w-4xl text-center">
