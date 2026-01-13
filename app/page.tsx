@@ -148,23 +148,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="border-y bg-muted/50 py-12">
+      {/* Stats Section - Enhanced */}
+      <section className="border-y bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {stats.map((stat, index) => {
               const Icon = stat.icon
+              const colors = [
+                "from-blue-600 to-cyan-600",
+                "from-purple-600 to-pink-600",
+                "from-orange-600 to-red-600",
+                "from-green-600 to-teal-600",
+              ]
               return (
                 <div
                   key={stat.label}
-                  className="flex flex-col items-center text-center animate-scale-in"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="group flex flex-col items-center text-center animate-scale-in hover:scale-110 transition-all duration-300"
+                  style={{ animationDelay: `${index * 150}ms` }}
                 >
-                  <div className="mb-3 rounded-full bg-primary/10 p-3">
-                    <Icon className="h-6 w-6 text-primary" />
+                  <div className={`mb-4 rounded-full bg-gradient-to-br ${colors[index]} p-4 shadow-lg group-hover:shadow-2xl transition-shadow`}>
+                    <Icon className="h-8 w-8 text-white" />
                   </div>
-                  <div className="text-3xl font-bold">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className={`text-4xl font-bold bg-gradient-to-r ${colors[index]} bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform`}>
+                    {stat.value}
+                  </div>
+                  <div className="text-sm font-medium text-slate-700">{stat.label}</div>
                 </div>
               )
             })}
