@@ -75,15 +75,27 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section with Parallax */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 py-20 sm:py-32 min-h-[90vh] flex items-center z-0">
-        {/* Floating Gradient Orbs - Simpler Background */}
-        <div className="absolute inset-0 overflow-hidden z-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/40 to-purple-500/40 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/40 to-pink-500/40 rounded-full blur-3xl animate-pulse delay-1000" />
-          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-full blur-3xl animate-pulse delay-500" />
+      <section className="relative overflow-hidden bg-white py-20 sm:py-32 min-h-[90vh] flex items-center z-0">
+        {/* Light Background Image */}
+        <div
+          className="absolute inset-0 opacity-20 z-0 grayscale"
+          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        >
+          <img
+            src="/tsdsi_hero_network_1768295750786.png"
+            alt="5G/6G Network"
+            className="h-full w-full object-cover"
+          />
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-blue-900/50 to-slate-900/60 z-0" />
+        {/* Floating Gradient Orbs - Lighter */}
+        <div className="absolute inset-0 overflow-hidden z-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-orange-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400/15 to-blue-400/15 rounded-full blur-3xl animate-pulse delay-500" />
+        </div>
+
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-blue-50/60 to-white/70 z-0" />
 
         <div className="container relative mx-auto px-4 lg:px-8 z-10">
           <div className="mx-auto max-w-4xl text-center">
@@ -92,7 +104,7 @@ export default function Home() {
               India's Premier Telecom Standards Organization
             </Badge>
             <h1
-              className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-white"
+              className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-slate-900"
               style={{
                 animation: "slide-in-right 0.8s ease-out",
                 opacity: scrollY > 100 ? 0.5 : 1,
@@ -100,12 +112,12 @@ export default function Home() {
               }}
             >
               Shaping the Future of{" "}
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
                 Telecommunications
               </span>
             </h1>
             <p
-              className="mb-8 text-lg sm:text-xl text-gray-200"
+              className="mb-8 text-lg sm:text-xl text-slate-700"
               style={{
                 animation: "slide-in-left 0.8s ease-out 0.2s both",
                 transform: `translateY(${scrollY * 0.05}px)`
