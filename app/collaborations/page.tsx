@@ -96,7 +96,7 @@ export default function CollaborationsPage() {
                         </Badge>
                         <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                             Building{" "}
-                            <span className="bg-gradient-to-r from-primary to-teal-600 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-[hsl(217,91%,60%)] via-[hsl(270,95%,75%)] to-[hsl(24,95%,53%)] bg-clip-text text-transparent">
                                 Global Partnerships
                             </span>
                         </h1>

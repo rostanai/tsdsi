@@ -45,7 +45,7 @@ export function Header() {
             <nav className="container mx-auto flex items-center justify-between p-4 lg:px-8">
                 {/* Logo */}
                 <Link href="/" className="flex items-center space-x-3">
-                    <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-teal-600 flex items-center justify-center">
+                    <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-[hsl(217,91%,60%)] via-[hsl(270,95%,75%)] to-[hsl(24,95%,53%)] flex items-center justify-center">
                         <span className="text-white font-bold text-xl">T</span>
                     </div>
                     <div className="flex flex-col">

@@ -39,7 +39,7 @@ export function Footer() {
                     {/* Brand Section */}
                     <div className="lg:col-span-2">
                         <Link href="/" className="flex items-center space-x-3 mb-4">
-                            <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-primary to-teal-600 flex items-center justify-center">
+                            <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-[hsl(217,91%,60%)] via-[hsl(270,95%,75%)] to-[hsl(24,95%,53%)] flex items-center justify-center">
                                 <span className="text-white font-bold text-2xl">T</span>
                             </div>
                             <div className="flex flex-col">
