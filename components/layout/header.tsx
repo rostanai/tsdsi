@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, Moon, Sun, ChevronDown } from "lucide-react"
+import { Menu, Moon, Sun, ChevronDown, Building2, Users, FileText, Globe, HelpCircle, Newspaper, Handshake, BookOpen, Award } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -11,30 +11,37 @@ import { cn } from "@/lib/utils"
 
 const megaMenuItems = {
     "About TSDSI": {
+        color: "from-blue-600 to-cyan-600",
         items: [
-            { name: "Overview", href: "/about", description: "Learn about TSDSI's mission and vision" },
-            { name: "Governance", href: "/governance", description: "Our organizational structure" },
-            { name: "Partners", href: "/partners", description: "Our member organizations" },
-            { name: "Contact Us", href: "/contact", description: "Get in touch with us" },
+            { name: "Overview", href: "/about", description: "Learn about TSDSI's mission and vision", icon: Building2, iconColor: "text-blue-600" },
+            { name: "Governance", href: "/governance", description: "Our organizational structure", icon: Award, iconColor: "text-purple-600" },
+            { name: "Governing Council", href: "/governing-council", description: "Leadership and council members", icon: Users, iconColor: "text-cyan-600" },
+            { name: "Technical Leaders", href: "/technical-leaders", description: "Expert technical leadership", icon: Award, iconColor: "text-orange-600" },
+            { name: "Partners", href: "/partners", description: "Our member organizations", icon: Handshake, iconColor: "text-green-600" },
+            { name: "Careers", href: "/careers", description: "Join our team", icon: Users, iconColor: "text-pink-600" },
+            { name: "Contact Us", href: "/contact", description: "Get in touch with us", icon: Globe, iconColor: "text-blue-600" },
         ]
     },
     "Technical Activities": {
+        color: "from-purple-600 to-pink-600",
         items: [
-            { name: "Study Groups", href: "/study-groups/networks", description: "Networks & Services standards" },
-            { name: "White Papers", href: "/white-papers", description: "Technical publications" },
-            { name: "Standards", href: "/standards", description: "Published standards catalog" },
+            { name: "Study Groups", href: "/study-groups/networks", description: "Networks & Services standards", icon: BookOpen, iconColor: "text-purple-600" },
+            { name: "White Papers", href: "/white-papers", description: "Technical publications", icon: FileText, iconColor: "text-orange-600" },
+            { name: "Standards", href: "/standards", description: "Published standards catalog", icon: Award, iconColor: "text-cyan-600" },
         ]
     },
     "Membership": {
+        color: "from-orange-600 to-red-600",
         items: [
-            { name: "Join Us", href: "/membership", description: "Become a member" },
-            { name: "FAQ", href: "/faq", description: "Frequently asked questions" },
+            { name: "Join Us", href: "/membership", description: "Become a member", icon: Users, iconColor: "text-orange-600" },
+            { name: "FAQ", href: "/faq", description: "Frequently asked questions", icon: HelpCircle, iconColor: "text-blue-600" },
         ]
     },
     "News & Events": {
+        color: "from-green-600 to-teal-600",
         items: [
-            { name: "Latest News", href: "/news", description: "Recent updates and announcements" },
-            { name: "Collaborations", href: "/collaborations", description: "Partnership activities" },
+            { name: "Latest News", href: "/news", description: "Recent updates and announcements", icon: Newspaper, iconColor: "text-green-600" },
+            { name: "Collaborations", href: "/collaborations", description: "Partnership activities", icon: Handshake, iconColor: "text-cyan-600" },
         ]
     },
 }
@@ -106,21 +113,31 @@ export function Header() {
                                     ? "opacity-100 visible translate-y-0"
                                     : "opacity-0 invisible -translate-y-2 pointer-events-none"
                             )}>
-                                <div className="p-4 space-y-2 bg-gradient-to-b from-background to-muted/30 rounded-lg">
-                                    {menuData.items.map((item) => (
-                                        <Link
-                                            key={item.href}
-                                            href={item.href}
-                                            className="block p-3 rounded-md hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 transition-all group/item border border-transparent hover:border-primary/20"
-                                        >
-                                            <div className="font-semibold text-sm group-hover/item:text-primary transition-colors">
-                                                {item.name}
-                                            </div>
-                                            <div className="text-xs text-muted-foreground mt-1 group-hover/item:text-foreground/70">
-                                                {item.description}
-                                            </div>
-                                        </Link>
-                                    ))}
+                                {/* Category Header with Gradient */}
+                                <div className={`p-3 bg-gradient-to-r ${menuData.color} rounded-t-lg`}>
+                                    <h3 className="font-bold text-white text-sm">{menuName}</h3>
+                                </div>
+                                <div className="p-4 space-y-2 bg-gradient-to-b from-background to-muted/30 rounded-b-lg">
+                                    {menuData.items.map((item) => {
+                                        const Icon = item.icon
+                                        return (
+                                            <Link
+                                                key={item.href}
+                                                href={item.href}
+                                                className="flex items-start gap-3 p-3 rounded-md hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 transition-all group/item border border-transparent hover:border-primary/20"
+                                            >
+                                                <Icon className={`h-5 w-5 mt-0.5 ${item.iconColor} group-hover/item:scale-110 transition-transform`} />
+                                                <div className="flex-1">
+                                                    <div className="font-semibold text-sm group-hover/item:text-primary transition-colors">
+                                                        {item.name}
+                                                    </div>
+                                                    <div className="text-xs text-muted-foreground mt-1 group-hover/item:text-foreground/70">
+                                                        {item.description}
+                                                    </div>
+                                                </div>
+                                            </Link>
+                                        )
+                                    })}
                                 </div>
                             </div>
                         </div>
