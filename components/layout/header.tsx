@@ -114,7 +114,7 @@ export function Header() {
 
                             {/* Mega Menu Dropdown */}
                             <div className={cn(
-                                "absolute left-0 top-full mt-2 w-80 rounded-lg border-2 border-primary/20 bg-background/98 backdrop-blur-xl shadow-2xl transition-all duration-200",
+                                "absolute left-0 top-full mt-2 w-80 rounded-lg border-2 border-slate-200 bg-white shadow-2xl transition-all duration-200",
                                 activeMenu === menuName
                                     ? "opacity-100 visible translate-y-0"
                                     : "opacity-0 invisible -translate-y-2 pointer-events-none"
@@ -123,21 +123,21 @@ export function Header() {
                                 <div className={`p-3 bg-gradient-to-r ${menuData.color} rounded-t-lg`}>
                                     <h3 className="font-bold text-white text-sm">{menuName}</h3>
                                 </div>
-                                <div className="p-4 space-y-2 bg-gradient-to-b from-background to-muted/30 rounded-b-lg">
+                                <div className="p-4 space-y-2 bg-white rounded-b-lg">
                                     {menuData.items.map((item) => {
                                         const Icon = item.icon
                                         return (
                                             <Link
                                                 key={item.href}
                                                 href={item.href}
-                                                className="flex items-start gap-3 p-3 rounded-md hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 transition-all group/item border border-transparent hover:border-primary/20"
+                                                className="flex items-start gap-3 p-3 rounded-md hover:bg-slate-50 transition-all group/item border border-transparent hover:border-slate-200"
                                             >
                                                 <Icon className={`h-5 w-5 mt-0.5 ${item.iconColor} group-hover/item:scale-110 transition-transform`} />
                                                 <div className="flex-1">
-                                                    <div className="font-semibold text-sm group-hover/item:text-primary transition-colors">
+                                                    <div className="font-semibold text-sm text-slate-900 group-hover/item:text-primary transition-colors">
                                                         {item.name}
                                                     </div>
-                                                    <div className="text-xs text-muted-foreground mt-1 group-hover/item:text-foreground/70">
+                                                    <div className="text-xs text-slate-600 mt-1">
                                                         {item.description}
                                                     </div>
                                                 </div>
