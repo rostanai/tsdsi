@@ -1,57 +1,60 @@
+"use client"
+
 import Link from "next/link"
-import { ArrowRight, Globe, Users, Award, TrendingUp, Network, Zap, Shield } from "lucide-react"
+import { ArrowRight, Users, FileText, Globe, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { useEffect, useState } from "react"
 
 const stats = [
   { label: "Member Organizations", value: "100+", icon: Users },
-  { label: "Standards Published", value: "50+", icon: Award },
+  { label: "Published Standards", value: "50+", icon: FileText },
   { label: "Global Partnerships", value: "15+", icon: Globe },
-  { label: "Years of Excellence", value: "10+", icon: TrendingUp },
+  { label: "Years of Excellence", value: "10+", icon: Shield },
 ]
 
 const features = [
   {
     title: "5G Innovation",
-    description: "Pioneered 5Gi technology, accepted by ITU-R and integrated into global 5G standards through 3GPP.",
-    icon: Zap,
-    color: "text-blue-500",
+    description: "Leading India's 5G standardization with 5Gi technology accepted by ITU-R and integrated into 3GPP specifications",
+    icon: Globe,
+    color: "text-blue-600",
   },
   {
     title: "6G Development",
-    description: "Actively contributing to 6G vision, use cases, and network architecture for next-generation connectivity.",
-    icon: Network,
-    color: "text-teal-500",
+    description: "Pioneering 6G research and standardization through Bharat 6G Alliance and international collaboration",
+    icon: Shield,
+    color: "text-purple-600",
   },
   {
     title: "Global Standards",
-    description: "Organizational partner of 3GPP, ITU, ETSI, and oneM2M, shaping international telecommunications standards.",
-    icon: Globe,
-    color: "text-indigo-500",
+    description: "Active participation in 3GPP, ITU, ETSI, and oneM2M for global telecommunications standardization",
+    icon: FileText,
+    color: "text-orange-600",
   },
   {
     title: "Network Security",
-    description: "Ensuring security and safety of networks and equipment through comprehensive standardization efforts.",
+    description: "Developing comprehensive security standards for next-generation telecommunications networks",
     icon: Shield,
-    color: "text-cyan-500",
+    color: "text-cyan-600",
   },
 ]
 
 const initiatives = [
   {
     title: "Low Mobility Large Cell (LMLC)",
-    description: "Introduced LMLC concept into ITU-R, later incorporated into global 5G standards.",
-    badge: "5G Standard",
+    description: "5Gi technology for enhanced coverage in rural and remote areas, accepted by ITU-R",
+    badge: "5G Innovation",
   },
   {
     title: "Bharat 6G Mission",
-    description: "Collaborating with Bharat 6G Alliance on beyond-5G and 6G technologies.",
-    badge: "6G Initiative",
+    description: "Contributing to India's 6G vision with research on AI-native networks and THz communications",
+    badge: "6G Research",
   },
   {
     title: "Indigenous IPR",
-    description: "Promoting Indian Intellectual Property Rights in global telecommunications standards.",
+    description: "Promoting Indian intellectual property in global telecommunications standards",
     badge: "Innovation",
   },
 ]
@@ -61,41 +64,77 @@ const partners = [
 ]
 
 export default function Home() {
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20 sm:py-32">
-        <div className="absolute inset-0 opacity-20">
+      {/* Hero Section with Parallax */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20 sm:py-32 min-h-[90vh] flex items-center">
+        {/* Animated Background */}
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        >
           <img
             src="/tsdsi_hero_network_1768295750786.png"
             alt="5G/6G Network"
             className="h-full w-full object-cover"
           />
         </div>
+
+        {/* Floating Gradient Orbs */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        </div>
+
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
+
         <div className="container relative mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <Badge className="mb-4 animate-fade-in bg-gradient-to-r from-primary to-secondary text-white border-0" variant="secondary">
+            <Badge className="mb-4 animate-fade-in bg-gradient-to-r from-primary to-secondary text-white border-0 shadow-lg">
               India's Premier Telecom Standards Organization
             </Badge>
-            <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl animate-slide-in-right">
+            <h1
+              className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
+              style={{
+                animation: "slide-in-right 0.8s ease-out",
+                opacity: scrollY > 100 ? 0.5 : 1,
+                transform: `translateY(${scrollY * 0.1}px)`
+              }}
+            >
               Shaping the Future of{" "}
-              <span className="bg-gradient-to-r from-[hsl(217,91%,60%)] via-[hsl(270,95%,75%)] to-[hsl(24,95%,53%)] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[hsl(217,91%,60%)] via-[hsl(270,95%,75%)] to-[hsl(24,95%,53%)] bg-clip-text text-transparent animate-gradient">
                 Telecommunications
               </span>
             </h1>
-            <p className="mb-8 text-lg text-muted-foreground sm:text-xl animate-slide-in-left">
+            <p
+              className="mb-8 text-lg text-muted-foreground sm:text-xl"
+              style={{
+                animation: "slide-in-left 0.8s ease-out 0.2s both",
+                transform: `translateY(${scrollY * 0.05}px)`
+              }}
+            >
               TSDSI develops India-specific telecommunications and ICT standards while contributing
               to global standardization efforts including 5G, 6G, and beyond.
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center animate-fade-in">
-              <Button size="lg" asChild className="group bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+            <div
+              className="flex flex-col gap-4 sm:flex-row sm:justify-center"
+              style={{ animation: "fade-in 0.8s ease-out 0.4s both" }}
+            >
+              <Button size="lg" asChild className="group bg-gradient-to-r from-primary to-secondary hover:opacity-90 hover:scale-105 transition-all shadow-lg hover:shadow-xl">
                 <Link href="/about">
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="border-2 border-primary hover:bg-primary/10">
+              <Button size="lg" variant="outline" asChild className="border-2 border-primary hover:bg-primary/10 hover:scale-105 transition-all">
                 <Link href="/membership">Become a Member</Link>
               </Button>
             </div>
