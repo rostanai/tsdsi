@@ -268,8 +268,8 @@ export default function AboutPage() {
                     </div>
                     <div className="mx-auto max-w-4xl">
                         <div className="relative">
-                            {/* Timeline line */}
-                            <div className="absolute left-8 top-0 h-full w-0.5 bg-border md:left-1/2" />
+                            {/* Timeline line - Colorful Gradient */}
+                            <div className="absolute left-8 top-0 h-full w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full shadow-lg md:left-1/2" />
 
                             {/* Milestones */}
                             <div className="space-y-12">
