@@ -75,10 +75,10 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section with Parallax */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20 sm:py-32 min-h-[90vh] flex items-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 py-20 sm:py-32 min-h-[90vh] flex items-center">
         {/* Animated Background */}
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-40"
           style={{ transform: `translateY(${scrollY * 0.5}px)` }}
         >
           <img
@@ -90,19 +90,21 @@ export default function Home() {
 
         {/* Floating Gradient Orbs */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/30 to-pink-500/30 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse delay-500" />
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-blue-900/70 to-slate-900/80" />
 
         <div className="container relative mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <Badge className="mb-4 animate-fade-in bg-gradient-to-r from-primary to-secondary text-white border-0 shadow-lg">
+            <Badge className="mb-4 animate-fade-in bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 shadow-2xl text-sm px-4 py-2">
+              <Sparkles className="mr-2 h-4 w-4 inline" />
               India's Premier Telecom Standards Organization
             </Badge>
             <h1
-              className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
+              className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-white"
               style={{
                 animation: "slide-in-right 0.8s ease-out",
                 opacity: scrollY > 100 ? 0.5 : 1,
@@ -110,12 +112,12 @@ export default function Home() {
               }}
             >
               Shaping the Future of{" "}
-              <span className="bg-gradient-to-r from-[hsl(217,91%,60%)] via-[hsl(270,95%,75%)] to-[hsl(24,95%,53%)] bg-clip-text text-transparent animate-gradient">
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
                 Telecommunications
               </span>
             </h1>
             <p
-              className="mb-8 text-lg text-muted-foreground sm:text-xl"
+              className="mb-8 text-lg sm:text-xl text-gray-200"
               style={{
                 animation: "slide-in-left 0.8s ease-out 0.2s both",
                 transform: `translateY(${scrollY * 0.05}px)`
@@ -128,14 +130,18 @@ export default function Home() {
               className="flex flex-col gap-4 sm:flex-row sm:justify-center"
               style={{ animation: "fade-in 0.8s ease-out 0.4s both" }}
             >
-              <Button size="lg" asChild className="group bg-gradient-to-r from-primary to-secondary hover:opacity-90 hover:scale-105 transition-all shadow-lg hover:shadow-xl">
+              <Button size="lg" asChild className="group bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 text-white border-0 hover:scale-110 transition-all shadow-2xl hover:shadow-blue-500/50">
                 <Link href="/about">
+                  <Sparkles className="mr-2 h-5 w-5" />
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="border-2 border-primary hover:bg-primary/10 hover:scale-105 transition-all">
-                <Link href="/membership">Become a Member</Link>
+              <Button size="lg" variant="outline" asChild className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400/20 hover:scale-110 transition-all shadow-xl hover:shadow-cyan-400/50 backdrop-blur-sm bg-white/10">
+                <Link href="/membership">
+                  <Users className="mr-2 h-5 w-5" />
+                  Become a Member
+                </Link>
               </Button>
             </div>
           </div>
