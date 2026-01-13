@@ -14,9 +14,12 @@ const megaMenuItems = {
         color: "from-blue-600 to-cyan-600",
         items: [
             { name: "Overview", href: "/about", description: "Learn about TSDSI's mission and vision", icon: Building2, iconColor: "text-blue-600" },
+            { name: "10th Anniversary", href: "/anniversary", description: "Celebrating a decade of excellence", icon: Award, iconColor: "text-yellow-600" },
             { name: "Governance", href: "/governance", description: "Our organizational structure", icon: Award, iconColor: "text-purple-600" },
             { name: "Governing Council", href: "/governing-council", description: "Leadership and council members", icon: Users, iconColor: "text-cyan-600" },
             { name: "Technical Leaders", href: "/technical-leaders", description: "Expert technical leadership", icon: Award, iconColor: "text-orange-600" },
+            { name: "Secretariat", href: "/secretariat", description: "Administrative team and functions", icon: Users, iconColor: "text-indigo-600" },
+            { name: "Hall of Fame", href: "/hall-of-fame", description: "Award recipients and recognition", icon: Award, iconColor: "text-yellow-600" },
             { name: "Partners", href: "/partners", description: "Our member organizations", icon: Handshake, iconColor: "text-green-600" },
             { name: "Careers", href: "/careers", description: "Join our team", icon: Users, iconColor: "text-pink-600" },
             { name: "Contact Us", href: "/contact", description: "Get in touch with us", icon: Globe, iconColor: "text-blue-600" },
@@ -41,6 +44,8 @@ const megaMenuItems = {
         color: "from-green-600 to-teal-600",
         items: [
             { name: "Latest News", href: "/news", description: "Recent updates and announcements", icon: Newspaper, iconColor: "text-green-600" },
+            { name: "Events Calendar", href: "/events", description: "Upcoming and past events", icon: Award, iconColor: "text-purple-600" },
+            { name: "Gallery", href: "/gallery", description: "Event photos and media", icon: Award, iconColor: "text-orange-600" },
             { name: "Collaborations", href: "/collaborations", description: "Partnership activities", icon: Handshake, iconColor: "text-cyan-600" },
         ]
     },

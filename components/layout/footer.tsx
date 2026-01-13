@@ -7,27 +7,30 @@ import { Separator } from "@/components/ui/separator"
 const footerLinks = {
     about: [
         { name: "About TSDSI", href: "/about" },
-        { name: "Mission & Vision", href: "/about#mission" },
-        { name: "Leadership", href: "/about#leadership" },
-        { name: "Governance", href: "/about#governance" },
+        { name: "10th Anniversary", href: "/anniversary" },
+        { name: "Governance", href: "/governance" },
+        { name: "Governing Council", href: "/governing-council" },
+        { name: "Technical Leaders", href: "/technical-leaders" },
+        { name: "Secretariat", href: "/secretariat" },
+        { name: "Hall of Fame", href: "/hall-of-fame" },
     ],
     standards: [
         { name: "Standards", href: "/standards" },
-        { name: "Working Groups", href: "/standards#working-groups" },
-        { name: "5G/6G Initiatives", href: "/standards#5g-6g" },
-        { name: "Publications", href: "/standards#publications" },
+        { name: "Study Groups", href: "/study-groups/networks" },
+        { name: "White Papers", href: "/white-papers" },
+        { name: "FAQ", href: "/faq" },
     ],
     membership: [
         { name: "Join TSDSI", href: "/membership" },
-        { name: "Member Benefits", href: "/membership#benefits" },
-        { name: "Member Directory", href: "/membership#directory" },
+        { name: "Partners", href: "/partners" },
+        { name: "Careers", href: "/careers" },
         { name: "Collaborations", href: "/collaborations" },
     ],
     resources: [
         { name: "News & Events", href: "/news" },
+        { name: "Events Calendar", href: "/events" },
+        { name: "Gallery", href: "/gallery" },
         { name: "Contact Us", href: "/contact" },
-        { name: "Privacy Policy", href: "/privacy" },
-        { name: "Terms of Service", href: "/terms" },
     ],
 }
 
