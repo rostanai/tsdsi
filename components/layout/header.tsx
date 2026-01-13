@@ -101,22 +101,22 @@ export function Header() {
 
                             {/* Mega Menu Dropdown */}
                             <div className={cn(
-                                "absolute left-0 top-full mt-2 w-80 rounded-lg border-2 bg-background shadow-2xl transition-all duration-200",
+                                "absolute left-0 top-full mt-2 w-80 rounded-lg border-2 border-primary/20 bg-background/98 backdrop-blur-xl shadow-2xl transition-all duration-200",
                                 activeMenu === menuName
                                     ? "opacity-100 visible translate-y-0"
                                     : "opacity-0 invisible -translate-y-2 pointer-events-none"
                             )}>
-                                <div className="p-4 space-y-2">
+                                <div className="p-4 space-y-2 bg-gradient-to-b from-background to-muted/30 rounded-lg">
                                     {menuData.items.map((item) => (
                                         <Link
                                             key={item.href}
                                             href={item.href}
-                                            className="block p-3 rounded-md hover:bg-primary/10 transition-all group/item"
+                                            className="block p-3 rounded-md hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 transition-all group/item border border-transparent hover:border-primary/20"
                                         >
                                             <div className="font-semibold text-sm group-hover/item:text-primary transition-colors">
                                                 {item.name}
                                             </div>
-                                            <div className="text-xs text-muted-foreground mt-1">
+                                            <div className="text-xs text-muted-foreground mt-1 group-hover/item:text-foreground/70">
                                                 {item.description}
                                             </div>
                                         </Link>

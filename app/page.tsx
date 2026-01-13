@@ -271,24 +271,53 @@ export default function Home() {
       </section>
 
       {/* Partners Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900">
+        {/* Background Image */}
+        <div className="absolute inset-0 opacity-30">
+          <img
+            src="/global_partnerships_colorful_1768298327248.png"
+            alt="Global Partnerships"
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-blue-900/70 to-slate-900/80" />
+
+        <div className="container relative mx-auto px-4 lg:px-8">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Global Partnerships</h2>
-            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+            <Badge className="mb-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white border-0 shadow-lg">
+              <Globe className="mr-2 h-4 w-4 inline" />
+              International Collaboration
+            </Badge>
+            <h2 className="mb-4 text-3xl font-bold sm:text-4xl text-white">Global Partnerships</h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-200">
               Collaborating with leading international standards organizations
             </p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-8">
-            {partners.map((partner, index) => (
-              <div
-                key={partner}
-                className="flex h-24 w-32 items-center justify-center rounded-lg border bg-card p-4 transition-all hover:shadow-md animate-scale-in"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <span className="text-xl font-bold text-muted-foreground">{partner}</span>
-              </div>
-            ))}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {partners.map((partner, index) => {
+              const colors = [
+                "from-blue-600 to-cyan-600",
+                "from-purple-600 to-pink-600",
+                "from-orange-600 to-red-600",
+                "from-green-600 to-teal-600",
+                "from-indigo-600 to-blue-600",
+                "from-pink-600 to-purple-600",
+                "from-yellow-600 to-orange-600",
+                "from-cyan-600 to-blue-600",
+              ]
+              return (
+                <div
+                  key={partner}
+                  className="group relative overflow-hidden rounded-xl border-2 border-white/20 bg-white/10 backdrop-blur-sm p-6 transition-all hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/50 animate-scale-in"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className={`absolute inset-0 bg-gradient-to-br ${colors[index]} opacity-0 group-hover:opacity-20 transition-opacity`} />
+                  <div className="relative flex h-full items-center justify-center">
+                    <span className="text-2xl font-bold text-white group-hover:scale-110 transition-transform">{partner}</span>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
