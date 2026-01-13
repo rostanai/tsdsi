@@ -76,26 +76,14 @@ export default function Home() {
     <div className="flex flex-col">
       {/* Hero Section with Parallax */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 py-20 sm:py-32 min-h-[90vh] flex items-center z-0">
-        {/* Animated Background */}
-        <div
-          className="absolute inset-0 opacity-50 z-0"
-          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
-        >
-          <img
-            src="/hero_5g_network_enhanced_1768299236120.png"
-            alt="5G/6G Network"
-            className="h-full w-full object-cover"
-          />
-        </div>
-
-        {/* Floating Gradient Orbs */}
+        {/* Floating Gradient Orbs - Simpler Background */}
         <div className="absolute inset-0 overflow-hidden z-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/30 to-pink-500/30 rounded-full blur-3xl animate-pulse delay-1000" />
-          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse delay-500" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/40 to-purple-500/40 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/40 to-pink-500/40 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-cyan-500/30 to-blue-500/30 rounded-full blur-3xl animate-pulse delay-500" />
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-blue-900/60 to-slate-900/70 z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-blue-900/50 to-slate-900/60 z-0" />
 
         <div className="container relative mx-auto px-4 lg:px-8 z-10">
           <div className="mx-auto max-w-4xl text-center">
