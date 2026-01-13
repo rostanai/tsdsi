@@ -140,13 +140,19 @@ export default function MembershipPage() {
                         </p>
                     </div>
                     <div className="grid gap-8 lg:grid-cols-3">
-                        {membershipTiers.map((tier) => {
+                        {membershipTiers.map((tier, index) => {
                             const Icon = tier.icon
+                            const colors = [
+                                "from-blue-600 to-cyan-600",
+                                "from-purple-600 to-pink-600",
+                                "from-orange-600 to-red-600",
+                            ]
                             return (
-                                <Card key={tier.name} className={`border-2 ${tier.color} hover:shadow-xl transition-all`}>
+                                <Card key={tier.name} className="border-2 hover:shadow-2xl transition-all hover:scale-105 overflow-hidden">
+                                    <div className={`h-2 w-full bg-gradient-to-r ${colors[index]}`} />
                                     <CardHeader>
-                                        <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
-                                            <Icon className="h-8 w-8 text-primary" />
+                                        <div className={`mb-4 inline-flex rounded-xl bg-gradient-to-br ${colors[index]} p-4 shadow-lg`}>
+                                            <Icon className="h-8 w-8 text-white" />
                                         </div>
                                         <CardTitle className="text-2xl">{tier.name}</CardTitle>
                                         <CardDescription className="text-base">{tier.description}</CardDescription>
@@ -160,7 +166,7 @@ export default function MembershipPage() {
                                                 </li>
                                             ))}
                                         </ul>
-                                        <Button className="mt-6 w-full" variant="outline" asChild>
+                                        <Button className={`mt-6 w-full bg-gradient-to-r ${colors[index]} hover:opacity-90 text-white border-0`} asChild>
                                             <Link href="/contact">
                                                 Apply Now
                                                 <ArrowRight className="ml-2 h-4 w-4" />
