@@ -258,7 +258,7 @@ export default function AboutPage() {
             </section>
 
             {/* History & Milestones */}
-            <section className="py-20" id="history">
+            <section className="py-20 bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-50" id="history">
                 <div className="container mx-auto px-4 lg:px-8">
                     <div className="mb-12 text-center">
                         <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Our Journey</h2>
