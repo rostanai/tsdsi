@@ -93,7 +93,8 @@ export function Header() {
                             onMouseEnter={() => setActiveMenu(menuName)}
                             onMouseLeave={() => setActiveMenu(null)}
                         >
-                            <button
+                            <Link
+                                href={menuData.items[0].href}
                                 className={cn(
                                     "flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors hover:text-primary rounded-md",
                                     activeMenu === menuName ? "text-primary bg-primary/10" : "text-muted-foreground"
@@ -104,7 +105,7 @@ export function Header() {
                                     "h-4 w-4 transition-transform",
                                     activeMenu === menuName && "rotate-180"
                                 )} />
-                            </button>
+                            </Link>
 
                             {/* Mega Menu Dropdown */}
                             <div className={cn(

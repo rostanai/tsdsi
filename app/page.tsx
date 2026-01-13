@@ -78,11 +78,11 @@ export default function Home() {
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 py-20 sm:py-32 min-h-[90vh] flex items-center">
         {/* Animated Background */}
         <div
-          className="absolute inset-0 opacity-40"
+          className="absolute inset-0 opacity-50"
           style={{ transform: `translateY(${scrollY * 0.5}px)` }}
         >
           <img
-            src="/tsdsi_hero_network_1768295750786.png"
+            src="/hero_5g_network_enhanced_1768299236120.png"
             alt="5G/6G Network"
             className="h-full w-full object-cover"
           />
@@ -95,7 +95,7 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse delay-500" />
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-blue-900/70 to-slate-900/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-blue-900/60 to-slate-900/70" />
 
         <div className="container relative mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
