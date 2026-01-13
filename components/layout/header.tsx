@@ -109,12 +109,16 @@ export function Header() {
                             </Link>
 
                             {/* Mega Menu Dropdown */}
-                            <div className={cn(
-                                "absolute left-0 top-full mt-2 w-80 rounded-lg border-2 border-slate-200 bg-white shadow-2xl transition-all duration-200",
-                                activeMenu === menuName
-                                    ? "opacity-100 visible translate-y-0"
-                                    : "opacity-0 invisible -translate-y-2 pointer-events-none"
-                            )}>
+                            <div
+                                className={cn(
+                                    "absolute left-0 top-full mt-2 w-80 rounded-lg border-2 border-slate-200 bg-white shadow-2xl transition-all duration-200",
+                                    activeMenu === menuName
+                                        ? "opacity-100 visible translate-y-0"
+                                        : "opacity-0 invisible -translate-y-2 pointer-events-none"
+                                )}
+                                onMouseEnter={() => setActiveMenu(menuName)}
+                                onMouseLeave={() => setActiveMenu(null)}
+                            >
                                 {/* Category Header with Gradient */}
                                 <div className={`p-3 bg-gradient-to-r ${menuData.color} rounded-t-lg`}>
                                     <h3 className="font-bold text-white text-sm">{menuName}</h3>
