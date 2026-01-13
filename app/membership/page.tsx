@@ -113,19 +113,34 @@ export default function MembershipPage() {
                         </p>
                     </div>
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                        {benefits.map((benefit, index) => (
-                            <Card key={benefit.title} className="hover:shadow-lg transition-all">
-                                <CardHeader>
-                                    <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                                        <Check className="h-6 w-6 text-primary" />
-                                    </div>
-                                    <CardTitle>{benefit.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <CardDescription>{benefit.description}</CardDescription>
-                                </CardContent>
-                            </Card>
-                        ))}
+                        {benefits.map((benefit, index) => {
+                            const colors = [
+                                "from-blue-600 to-cyan-600",
+                                "from-purple-600 to-pink-600",
+                                "from-orange-600 to-red-600",
+                                "from-green-600 to-teal-600",
+                                "from-indigo-600 to-blue-600",
+                                "from-pink-600 to-purple-600",
+                            ]
+                            return (
+                                <Card
+                                    key={benefit.title}
+                                    className="group transition-all hover:shadow-2xl hover:scale-105 border-2 overflow-hidden animate-scale-in"
+                                    style={{ animationDelay: `${index * 100}ms` }}
+                                >
+                                    <div className={`h-2 w-full bg-gradient-to-r ${colors[index]}`} />
+                                    <CardHeader>
+                                        <div className={`mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${colors[index]} shadow-lg group-hover:scale-110 transition-transform`}>
+                                            <Check className="h-7 w-7 text-white" />
+                                        </div>
+                                        <CardTitle className="text-xl">{benefit.title}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <CardDescription className="text-base leading-relaxed">{benefit.description}</CardDescription>
+                                    </CardContent>
+                                </Card>
+                            )
+                        })}
                     </div>
                 </div>
             </section>
